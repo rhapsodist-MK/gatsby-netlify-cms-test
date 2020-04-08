@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: github
+  repo: rhapsodist-MK/gatsby-netlify-cms-test
 
 media_folder: static/assets
 public_folder: /assets
