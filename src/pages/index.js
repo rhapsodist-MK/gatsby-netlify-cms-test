@@ -1,5 +1,4 @@
 import React, {useState} from "react"
-import { Link } from "gatsby"
 import axios from 'axios'
 import * as qs from "query-string"
 
@@ -17,7 +16,10 @@ const IndexPage = ({location}) => {
     const axiosOptions = {
       url: location.pathname,
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: { 
+        'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' 
+      },
       data: qs.stringify(formInputs)
     }
     console.log(axiosOptions)
