@@ -36,9 +36,8 @@ const IndexPage = ({location}) => {
   }
   return (
     <Layout>
-      <form name="test_form" method="post" data-netlify="true" onSubmit={handleSubmit} data-netlify-honeypot="bot-field">
+      <form name="test_form" method="post" data-netlify="true" onSubmit={handleSubmit}>
       <input type="hidden" name="form-name" value="test_form" />
-      <input type="hidden" name="bot-field"/>
     <p>
       <label>Your Name: <input type="text" name="name" onChange={(e) => setFormInputs({...formInputs, name: e.target.value})}/></label>   
     </p>
