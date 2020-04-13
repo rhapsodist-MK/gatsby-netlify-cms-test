@@ -10,17 +10,16 @@ const IndexPage = ({location}) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(formInputs)
-    // const formData = {}
-    // Object.keys(refForm.current).map(key => (formData[key] = refForm.current[key].value))
 
+    const formData = new FormData(e.target)
     const axiosOptions = {
       url: location.pathname,
-      method: 'POST',
+      method: 'post',
       headers: { 
         'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' 
       },
-      data: qs.stringify(formInputs)
+      data: new URLSearchParams(formData).toString()
     }
     console.log(axiosOptions)
 
@@ -29,17 +28,10 @@ const IndexPage = ({location}) => {
     .then(response => {
       console.log('!!!!!!!!!!!!!!!!!!!!!')
       console.log(response)
-      // this.setState({
-      //   feedbackMsg: "Form submitted successfully!",
-      // })
-      // this.domRef.current.reset()
     })
     .catch(err => {
       console.log('@@@@@@@@@@@@@@@@')
       console.log(err)
-      // this.setState({
-      //   feedbackMsg: "Form could not be submitted.",
-      // })
     })
   }
   return (
